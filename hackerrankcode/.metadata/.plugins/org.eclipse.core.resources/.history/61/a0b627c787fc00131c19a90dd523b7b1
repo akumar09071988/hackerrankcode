@@ -1,0 +1,68 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class Solution {
+	
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		/*Scanner in = new Scanner(System.in);
+		String s1=in.nextLine();
+		String s2=in.nextLine();*/
+		Solution sol = new Solution();
+		int wrdLngth=sol.analyzeString("ABCDEF", "FBDAMN");
+        System.out.println(wrdLngth);
+	}
+	
+	
+	
+	
+	
+	private int analyzeString(String inputString1,String inputString2)
+	{
+          int wordLength =0;  
+		  int[] charArray = new int[26];
+		  int [] orderArray1 = new int[26];
+		  int [] orderArray2 = new int[26];
+		  for(int i=0;i<inputString2.length();i++)
+		  {
+			  Character temp = inputString2.charAt(i);
+			 charArray[temp%'A']+=1;
+			 orderArray1[temp%'A']=i; 
+		  }
+		  
+		  String lastUpdated="";
+		  for(int i=0;i<inputString1.length();i++)
+		  {
+			  Character temp = inputString1.charAt(i);
+			  if(charArray[temp%'A']!=0)
+			  {
+				 if(lastUpdated!="")
+				 {
+					 if(orderArray1[lastUpdated.toCharArray()[0]%'A']<orderArray1[temp%'A'])
+					  {
+						  lastUpdated=temp.toString();
+						  charArray[temp%'A']-=1; 
+						  wordLength++; 
+					  }
+				 }
+				 else
+				 {
+					 lastUpdated=temp.toString();
+					  charArray[temp%'A']-=1; 
+					  wordLength++; 
+				 }
+				 
+			  }
+			  
+		  }
+	  return wordLength;
+	  
+	}
+
+
+}

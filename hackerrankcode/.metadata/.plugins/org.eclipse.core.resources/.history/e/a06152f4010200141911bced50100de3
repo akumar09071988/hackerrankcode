@@ -1,0 +1,63 @@
+
+public class Solution {
+
+	/**
+	 * @param args
+	 */
+	int[] countCharacter ;
+	int[] positionCharacter ;
+	int[] lexiPosition ;
+	int[] charCount;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Solution obj = new Solution();
+		obj.countCharacter = new int[26];
+		obj.positionCharacter = new int[26];
+		String s1 = "";
+        int size = obj.countLetters(s1, obj.countCharacter);
+        obj.lexiPosition = new int[size];
+        //obj.charCount=  new int[size];
+	}
+	
+	private int countLetters(String s, int[] count)
+	{
+		int uniqueLetters=0;
+		for(int i=0;i<s.length();i++)
+		{
+			if(count[s.charAt(i)/'a']==0)
+			{
+				uniqueLetters++;
+			}
+		   	count[s.charAt(i)/'a']++;
+		}
+		return uniqueLetters;
+	}
+	
+	private void sortCharacters(int[] lexPos,int[] count,int [] position)
+	{
+		int index=0;
+		for(int i=0;i<26;i++)
+		{
+			if(count[i]!=0)
+			{
+				lexPos[index]='a'+i;
+				position[i]=index;
+				index++;
+			}
+		}
+	}
+	
+	private void findWord(String s1,int[] lexPos,int[] count,int [] position)
+	{
+		for(int i=s1.length();i>0;i--)
+		{
+			
+		}
+	}
+	
+	private void findWord1()
+	{
+		
+	}
+}

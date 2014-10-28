@@ -1,0 +1,88 @@
+
+public class Solution {
+
+	/**
+	 * @param args
+	 */
+	/* Algorithm
+	 * count the total numberof character and all unique characters and store a sorted char array
+	 * using the first char as prefix try searching if u can make a word
+	 */
+	int[] countCharacter ;
+	int[] positionCharacter ;
+	char[] lexiPosition ;
+	int[] charCount;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Solution obj = new Solution();
+		obj.countCharacter = new int[26];
+		obj.positionCharacter = new int[26];
+		String s1 = "";
+        int size = obj.countLetters(s1, obj.countCharacter);
+        obj.lexiPosition = new char[size];
+        //obj.charCount=  new int[size];
+	}
+	
+	private int countLetters(String s, int[] count)
+	{
+		int uniqueLetters=0;
+		for(int i=0;i<s.length();i++)
+		{
+			if(count[s.charAt(i)/'a']==0)
+			{
+				uniqueLetters++;
+			}
+		   	count[s.charAt(i)/'a']++;
+		}
+		return uniqueLetters;
+	}
+	
+	private void sortCharacters(int[] lexPos,int[] count,int [] position)
+	{
+		int index=0;
+		for(int i=0;i<26;i++)
+		{
+			if(count[i]!=0)
+			{
+				lexPos[index]='a'+i;
+				position[i]=index;
+				index++;
+			}
+		}
+	}
+	
+	private void findWord(String s1,char[] lexPos,int[] count,int [] position)
+	{
+		for(int i=0;i<lexPos.length;i++)
+		{
+			char prefix = lexPos[i];
+			int  index = s1.indexOf(prefix);
+			int[] count1 = new int[26];
+			int uniqueChar = countLetters(s1.substring(i), count1);
+			if(uniqueChar<lexPos.length)
+			{
+				continue;
+			}
+			int k =0;
+			boolean corPrefix = true;
+			while(k<26)
+			{
+				if(count1[k]<(count[k]/2))
+				{
+					corPrefix=false;
+					break;
+				}
+			}
+			if(!corPrefix)
+			{
+				continue;
+			}
+		}
+	}
+	
+	private void findWord1()
+	{
+		
+	}
+}

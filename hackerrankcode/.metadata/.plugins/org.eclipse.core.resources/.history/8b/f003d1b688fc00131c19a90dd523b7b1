@@ -1,0 +1,35 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class Solution {
+	
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		/*Scanner in = new Scanner(System.in);
+		String s1=in.nextLine();
+		String s2=in.nextLine();*/
+		Solution sol = new Solution();
+		int wrdLngth=sol.analyzeString("ABCDEF", "FBDAMN");
+        System.out.println(wrdLngth);
+	}
+	
+	
+	
+	
+	
+	private int analyzeString(String inputString1,String inputString2)
+	{
+         int length = inputString1.length();
+         
+         int[][] sequence = new int[length][length];
+         
+         return length;
+	}
+
+
+}

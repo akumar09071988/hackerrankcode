@@ -1,0 +1,61 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class Solution {
+	
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner in = new Scanner(System.in);
+		String s1=in.nextLine();
+		String s2=in.nextLine();
+		Solution sol = new Solution();
+		int wrdLngth=sol.analyzeString(s1, s2);
+        System.out.println(wrdLngth);
+	}
+	
+	
+	
+	
+	
+	private int analyzeString(String inputString1,String inputString2)
+	{
+         int length = inputString1.length();
+         
+         int[][] sequence = new int[length+1][length+1];
+         
+         for (int i=0; i<=length; i++)
+         {
+           for (int j=0; j<=length; j++)
+           {
+        	   if (i == 0 || j == 0)
+        	   {
+        		   sequence[i][j] = 0;
+        	   }
+        	   
+        	   else if (inputString1.charAt(i-1) == inputString2.charAt(j-1))
+        	   {
+        		   sequence[i][j] = sequence[i-1][j-1] + 1;
+        	   }
+        	   else
+        	   {
+        		   sequence[i][j] = max(sequence[i-1][j], sequence[i][j-1]);
+        	   }
+        	       
+        	       
+           }
+         }  
+         return sequence[length][length];
+	}
+	
+	private int max(int a, int b)
+	{
+	    return (a > b)? a : b;
+	}
+
+
+}

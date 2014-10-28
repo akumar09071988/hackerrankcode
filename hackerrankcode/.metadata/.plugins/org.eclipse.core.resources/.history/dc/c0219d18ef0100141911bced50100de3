@@ -1,0 +1,32 @@
+
+public class Solution {
+
+	/**
+	 * @param args
+	 */
+	int[] countCharacter ;
+	int[] lexiPosition ;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Solution obj = new Solution();
+		obj.countCharacter = new int[26];
+		String s1 = "";
+
+	}
+	
+	private int countLetters(String s, int[] count)
+	{
+		int uniqueLetters=0;
+		for(int i=0;i<s.length();i++)
+		{
+			if(count[s.charAt(i)/'a']==0)
+			{
+				uniqueLetters++;
+			}
+		   	count[s.charAt(i)/'a']++;
+		}
+		return uniqueLetters;
+	}
+
+}

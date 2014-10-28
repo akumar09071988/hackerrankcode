@@ -1,0 +1,84 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
+
+public class Solution {
+	
+	static int MIN_POS = 1;
+	static int MAX_POS = 1;
+	static int MAX_DICE=6;
+	static int MIN_DICE=1;
+	
+	public class Graph
+	{
+		int V;
+		int E;
+		ArrayList<ArrayList<Integer>> adj ;
+		
+		public void Graph(int V)
+		{
+			this.V =V;
+			adj = new ArrayList<>();
+			this.E = 0;
+		}
+		
+		public void addEdge(int v,int w)
+		{
+			adj.get(v).add(w);
+			this.E++;
+		}
+		
+	
+		
+		
+	}
+	
+	public class BFS
+	{
+		boolean[]  marked;
+		int []     edgeTo;
+		int S;
+		
+		public void BFS(Graph graph,int s)
+		{
+			marked = new boolean[graph.V];
+			edgeTo = new int[graph.V];
+			this.S=s;
+			bfs(graph,s);
+		}
+		
+		private void bfs(Graph G, int s)
+		{
+	    Queue<Integer> queue = new LinkedList<>();;
+		marked[s] = true; // Mark the source
+		queue.add(s); // and put it on the queue.
+		while (!queue.isEmpty())
+		{
+		int v = queue.remove(); // Remove next vertex from the queue.
+		for (int w : G.adj.get(v))
+		if (!marked[w]) // For every unmarked adjacent vertex,
+		{
+		edgeTo[w] = v; // save last edge on a shortest path,
+		marked[w] = true; // mark it because path is known,
+		queue.add(w); // and add it to the queue.
+		if(w==Solution.MAX_POS)
+		{
+			break;
+		}
+		}
+		}
+		}
+	}
+	
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) 
+	{
+          
+		
+	}
+
+}

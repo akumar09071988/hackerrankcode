@@ -1,0 +1,16 @@
+
+public class Solution {
+
+    class EdgeWeightedGraph
+    {
+    	private final int V;
+        private int E;
+        private Bag<Edge>[] adj;
+        
+    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

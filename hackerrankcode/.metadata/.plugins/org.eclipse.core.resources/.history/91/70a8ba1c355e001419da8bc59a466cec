@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+
+public class Solution {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		
+		try
+		{
+			Scanner in1 = new Scanner(System.in);
+			StringBuffer st = new StringBuffer(in1.nextLine());
+			int N = Integer.parseInt(st.toString().split(" ")[0]);
+			int E = Integer.parseInt(st.toString().split(" ")[1]);
+			System.out.println(N+"  "+E);
+			for(int i=0;i<E;i++)
+			{
+				st = new StringBuffer(in1.nextLine());
+				System.out.println(st.toString());
+				int N1 = Integer.parseInt(st.toString().split(" ")[0]);
+				int N2 = Integer.parseInt(st.toString().split(" ")[1]);
+				System.out.println(N1+"  "+N2);
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+
+	}
+
+}
