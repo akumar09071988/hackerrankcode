@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+
+public class Solution {
+	
+	int noOfColors =0;
+	int [] heightCandles;
+	int [] colorsCandles;
+
+	public static void main(String[] args) 
+	{
+		Solution obj = new Solution();
+        try
+        {
+        	Scanner in = new Scanner(System.in);
+        	String firstLine  =  in.nextLine();
+        	int N = Integer.parseInt(firstLine.split(" ")[0]);
+        	obj.noOfColors = Integer.parseInt(firstLine.split(" ")[1]);
+        	System.out.println(N+" "+obj.noOfColors);
+        	obj.heightCandles = new int[N];
+        	obj.colorsCandles = new int[N];
+        }
+        catch(Exception e)
+        {
+        	
+        }
+	}
+
+}

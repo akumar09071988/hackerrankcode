@@ -10,12 +10,10 @@
 <fullyQualifiedTypeName name="java.io.StringBufferInputStream"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="Main"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.lang.ArrayStoreException"/>
 <fullyQualifiedTypeName name="java.util.Map.Entry"/>
 <fullyQualifiedTypeName name="Solution.CC"/>
 <fullyQualifiedTypeName name="java.lang.Comparable"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="Solution.Ladder"/>
 <fullyQualifiedTypeName name="Solution.snakes"/>
 <fullyQualifiedTypeName name="java.util.Queue"/>
@@ -24,10 +22,13 @@
 <fullyQualifiedTypeName name="java.util.Stack"/>
 <fullyQualifiedTypeName name="Solution.Graph"/>
 <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
-<fullyQualifiedTypeName name="Solution"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
-<fullyQualifiedTypeName name="Solution.Edge"/>
 <fullyQualifiedTypeName name="Solution.EdgeWeightedGraph"/>
 <fullyQualifiedTypeName name="Solution.KruskalMST"/>
+<fullyQualifiedTypeName name="Solution.Edge"/>
+<fullyQualifiedTypeName name="Solution"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="Solution.Pile"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>
