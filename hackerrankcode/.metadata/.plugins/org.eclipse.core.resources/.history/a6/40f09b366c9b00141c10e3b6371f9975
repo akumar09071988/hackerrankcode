@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+
+public class Solution {
+	
+	int[][] outPutArray;
+
+	public static void main(String[] args) 
+	{
+	   Solution obj = new Solution();
+	   try
+	   {
+		   Scanner in = new Scanner(System.in);
+		   int testcase =in.nextInt();
+		   obj.outPutArray = new int[testcase][2];
+		   in.nextLine();
+		   for(int i=0;i<testcase;i++)
+		   {
+			   int noElements = in.nextInt();
+			   in.nextLine();
+			   int [] inputArr = new int[noElements];
+			   for(int j=0;j<noElements;j++)
+			   {
+				   inputArr[i]=in.nextInt();
+			   }
+			   obj.calculateMaxSum(i, inputArr);
+		   }
+		   in.nextLine();
+	   }
+	   catch(Exception e)
+	   {
+		   e.printStackTrace();
+	   }
+
+	}
+	
+	public void calculateMaxSum(int i,int [] inputArr)
+	{
+		int maxCotiguous =0;
+		int maxNonContiguous =0;
+		int N = inputArr.length;
+		for(int k=0;k<N;k++)
+		{
+			if(maxCotiguous+inputArr[i]>=inputArr[i])
+			{
+				maxCotiguous = maxCotiguous+inputArr[i];
+			}
+			else
+			{
+				maxCotiguous = inputArr[i];
+			}
+			
+			if(maxNonContiguous+inputArr[i]>maxNonContiguous)
+			{
+				maxNonContiguous = maxNonContiguous+inputArr[i];
+			}
+		}
+		
+		System.out.println(maxCotiguous+"-------------- "+maxNonContiguous);
+	}
+
+}
