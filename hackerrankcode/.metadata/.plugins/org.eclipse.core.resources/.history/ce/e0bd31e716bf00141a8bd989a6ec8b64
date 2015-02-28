@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+
+public class Solution {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try
+		{
+			Scanner in = new Scanner(System.in);
+			int numTestCase = Integer.parseInt(in.nextLine());
+			int[] output = new int[numTestCase];
+			for (int i=0;i<numTestCase;i++)
+			{
+				int num = in.nextInt();
+				int times = in.nextInt();
+				int div = in.nextInt();
+				if(num%div==0)
+				{
+					output[i] =0;
+				}
+				else
+				{
+					int bigNum =Solution.makeBIgNum(num, times);
+					output[i] = bigNum%div;
+				}
+				
+				
+			}
+			for (int i=0;i<numTestCase;i++)
+			{
+				System.out.println(output[i]);
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+
+	}
+	public static int makeBIgNum(int num,int times)
+	{
+		String retString ="";
+		int i=0;
+		while(i<times)
+		{
+			retString = retString+num;
+		}
+		return Integer.parseInt(retString);
+	}
+
+}

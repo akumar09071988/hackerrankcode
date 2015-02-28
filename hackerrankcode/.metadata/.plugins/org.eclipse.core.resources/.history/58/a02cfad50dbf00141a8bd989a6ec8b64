@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+
+public class Solution {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try
+		{
+			Scanner in = new Scanner(System.in);
+			int num = Integer.parseInt(in.nextLine());
+			int[] arr = new int[num];
+			int[] left = new int[num];
+			int [] right = new int[num];
+			int currLeftMax = 0;
+			for(int i=0;i<num;i++)
+			{
+				arr[i] = in.nextInt();
+				if(i==0)
+				{
+					left[i] =0;
+				}
+				if(i== num-1)
+				{
+					right[i]=0;
+				}
+				if(i!=0)
+				{
+					if(arr[i-1]>arr[i])
+					{
+						currLeftMax = i-1;
+					}
+					left[i]=currleftMax;
+				}
+				
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+
+	}
+
+}

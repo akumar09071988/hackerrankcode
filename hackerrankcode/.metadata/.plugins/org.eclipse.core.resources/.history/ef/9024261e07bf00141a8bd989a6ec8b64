@@ -1,0 +1,21 @@
+import java.io.UnsupportedEncodingException;
+
+
+public class Solution {
+
+	public static void main(String[] args) {
+		
+		 
+		 try {
+			 String s = "admin";
+			byte[] bytes = s.getBytes("US-ASCII");
+			
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	   
+
+	}
+
+}
